@@ -1,0 +1,5 @@
+interface:
+  display_name: "Draft with Docs"
+  short_description: "Draft a design, then record the surviving decisions"
+policy:
+  allow_implicit_invocation: false
