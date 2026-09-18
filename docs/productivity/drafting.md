@@ -18,9 +18,23 @@ What you are asking for decides between the two primitives:
 
 ## The owner's questions and the decision log
 
-The line the skill holds is the ADR test: hard to reverse, surprising without context, the result of a real trade-off. Hard to reverse is yours; cheap to reverse is the agent's. It asks in rounds shaped like grilling (numbered `❓` questions, each with a `➡️` recommendation) and waits, so a whole frontier of owner questions arrives at once and nothing depends on an answer still open. Reaching the report without a single question is treated as a warning sign that an owner's call was settled silently.
+The line the skill holds is that two things make an answer yours: no fact can settle it, or being wrong costs more than a redo. The list above is the recurring cases rather than the boundary, and for anything it does not name the ADR test decides: hard to reverse, surprising without context, the result of a real trade-off. Hard to reverse is yours; cheap to reverse is the agent's. It asks in rounds shaped like grilling (numbered `❓` questions, each with a `➡️` recommendation) and waits, so a whole frontier of owner questions arrives at once and nothing depends on an answer still open.
 
-The report is a **decision log**, weightiest decision first: **what** in one line, **why** with the rejected alternative, **how to undo it** and what would later make that expensive. It shows the load-bearing decisions working on one real case with real values, lists the assumptions it did not ask about, and states what it deliberately left open and why that is cheaper to decide later.
+The report is a **decision log**, weightiest decision first: **what** in one line, **why** with the rejected alternative, **how to undo it** and what would later make that expensive. It shows the load-bearing decisions working on one real case with real values, and marks the decision the agent is least sure of so you know where to push back. Under the log it lists the assumptions it did not ask about, and states what it deliberately left open and why that is cheaper to decide later.
+
+## Common questions
+
+**It asked me nothing and went straight to the report.**
+That is legitimate where every call was genuinely cheap to reverse, and worth a second look where it was not. The check is the log itself: read the **how to undo** line on each entry, and the decision marked as the least sure one. If something there is expensive to reverse, or turns on money, legal exposure, who the product is for, or the quality bar, it was yours and it got settled silently. Say so and that one decision reopens.
+
+**Does anything survive the session?**
+No. The skill writes no files, and nothing it drafts is canon once the session ends unless you say so. When you want the decisions kept, run [draft-with-docs](https://aihero.dev/skills-draft-with-docs) instead: it runs the same session, then asks which decisions should outlive it and records only those as ADRs and glossary entries through [domain-modeling](https://aihero.dev/skills-domain-modeling).
+
+**Can I switch to grilling halfway through?**
+Yes, and the rounds are shaped alike so that you can: numbered questions, one recommendation each. Answer the round, then ask to be grilled on the branch you want to own yourself, and the format does not change under you. The usual reason is a call the skill ranked as its own that you would rather make.
+
+**`draft-with-docs` ran, but it never loaded `drafting`.**
+The same rough edge is reported for `grill-with-docs` across [harnesses](https://www.aihero.dev/ai-coding-dictionary/harness): a skill whose body names other skills does not reliably cause them to load, and `draft-with-docs` names two. The tell is a session that interviews you about libraries and file layout, which is a [model](https://www.aihero.dev/ai-coding-dictionary/model) improvising an interview rather than running this skill. Asking the agent directly whether it loaded `drafting` and `domain-modeling` usually recovers it.
 
 ## It's working if
 
@@ -28,6 +42,7 @@ The report is a **decision log**, weightiest decision first: **what** in one lin
 - Each question arrives numbered with a recommendation, and you can answer the round by number.
 - Every entry in the report has three labelled lines, and "how to undo" says *trivial* where it is.
 - The rejected option is in the report next to the one that was picked.
+- The report names the decision the agent is least sure of, or says plainly that none of them is shaky.
 
 ## Where it fits
 

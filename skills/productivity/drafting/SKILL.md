@@ -20,7 +20,9 @@ Design it twice before you settle - carry the option you rejected into the repor
 
 ## Escalate only what is theirs
 
-Put a question to the user only when the answer is theirs as the accountable owner, never as an expert:
+Put a question to the user only when the answer is theirs as the accountable owner, never as an expert.
+Two things make an answer theirs: no fact can settle it, or being wrong costs more than a redo.
+The shapes this takes, over and over:
 
 - money, vendor lock-in, anything with a bill attached
 - legal, regulatory and personal-data exposure
@@ -29,12 +31,9 @@ Put a question to the user only when the answer is theirs as the accountable own
 - anything expensive to reverse once real data or a partner depends on it
 - genuine ties, where the options are equal and it comes down to their taste
 
-The test is the ADR test: hard to reverse, surprising without context, the result of a real trade-off.
+The list is the recurring cases, not the boundary.
+For anything it does not name, the ADR test decides: hard to reverse, surprising without context, the result of a real trade-off.
 Hard to reverse is theirs; cheap to reverse is yours.
-
-Also escalate the calls where your own confidence is genuinely low.
-If you would flag a decision in the report as "least sure, push back here", ask about it instead - before the report, so the answer shapes the draft rather than amending it.
-Reaching the report without having asked a single question is a warning sign: check whether you silently settled calls that were the owner's, or papered over your own uncertainty.
 
 Ask in numbered rounds, in the same shape as grilling, so the two skills compose:
 
@@ -56,17 +55,17 @@ The rounds are done when no owner question is left open; then report.
 
 ## Report
 
-Present the draft as a decision log. For each decision:
+Present the draft as a decision log. Each decision is three separate labelled lines:
 
 - **What** you settled on, in one line.
 - **Why** - the trade-off, and what you rejected.
 - **How to undo it** if it turns out wrong, and what would later make it expensive.
-  When the reversal is genuinely free, write "trivial" - never invent a cost - and ask whether the decision belongs in the log at all.
+  When the reversal is genuinely free, write "trivial" - never invent a cost - and ask yourself whether the decision belongs in the log at all.
 
-These are three separate labeled lines in every language the conversation runs in: translate the labels when the chat is not in English, but never collapse an entry into one running sentence.
 Order the decisions by consequence, the weightiest first - the reader stops reading when it stops mattering.
 Report only the decisions that carry the design; leave the minor calls out entirely - the report is for reading, not for the record.
 Show the load-bearing decisions working on one real case, with real values, rather than describing them in the abstract.
+Mark the decision you are least sure of, so the reader knows where to push back; where none of them is shaky, say that instead of manufacturing a doubt.
 
 List the assumptions the draft rests on: the things you were confident enough not to ask about.
 Then state what you deliberately left open, and why it is cheaper to decide later.
