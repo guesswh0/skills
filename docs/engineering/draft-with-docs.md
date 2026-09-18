@@ -22,7 +22,7 @@ It writes into your repo: resolved terms go to `CONTEXT.md`, decisions that pass
 
 ## The selection
 
-When the decision log is on the table the skill asks, one option per decision and multi-select, which decisions should outlive the session. Only those are handed to domain-modeling: a term lands in `CONTEXT.md`; a decision that is hard to reverse, surprising without context and a real trade-off lands as an ADR. Everything you did not select stays in the conversation.
+When the decision log is on the table the skill asks which decisions should outlive the session. Only those are handed to domain-modeling: a term lands in `CONTEXT.md`; a decision that is hard to reverse, surprising without context and a real trade-off lands as an ADR. What travels is the decision, not the log entry it was reported in, so an ADR stays the one to three sentences its own format asks for. Everything you did not select stays in the conversation.
 
 ## It's working if
 

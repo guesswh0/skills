@@ -4,6 +4,7 @@ description: A drafting session that puts to you only the owner's questions, whi
 disable-model-invocation: true
 ---
 
-Call the Skill tool with "drafting".
-When the report is on the table, ask which decisions should outlive the session: one option per decision, multi-select.
-Call the Skill tool with "domain-modeling" and apply it to the selected decisions only; the rest leave no trace.
+Call the Skill tool twice, for "drafting" and "domain-modeling".
+When the report is on the table, ask which decisions should outlive the session.
+Record the selection; the rest leave no trace.
+The decision travels; its log entry does not.
