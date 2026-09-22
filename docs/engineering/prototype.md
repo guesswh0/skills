@@ -31,6 +31,11 @@ The **prototype** is the runnable evidence the answer came from, and it is not d
 
 ## Common questions
 
+**Does choosing a UI variant mean its usability is validated?**
+Choosing a direction records a preference; task performance is a separate observation.
+A layout may look right while people still need help using it.
+The answer preserves which cases were checked, who tried them, and where guidance was needed, so the next person can see what the prototype actually established.
+
 **Wait, isn't the prototype supposed to be deleted?**
 Not any more. It used to be: build it, keep the answer, bin the code. The sharpest objection to that was never about speed: it was *who picks up the work next [session](https://www.aihero.dev/ai-coding-dictionary/session), and what do they have to work from?* A prose summary of a prototype loses the thing that made it convincing. So the prototype is now treated as a [primary source](https://www.aihero.dev/ai-coding-dictionary/primary-source): it lands on a `prototype/<name>` branch out of main and the implementation issue points at it. What changed is where the code lives, not the discipline; it still never merges into main.
 
@@ -54,7 +59,8 @@ It can be, if you prototype questions you could have answered by talking, or let
 - You can say in one sentence what question the prototype exists to answer, and it's written at the top of the demo, not just in your head.
 - Someone who doesn't read code can drive the logic demo. They open the file, press the buttons in a walkthrough tab, and describe what they see in their own words.
 - Someone says "wait, that shouldn't be possible" or "huh, I assumed X". That's a bug in the *idea*, which is the entire point.
-- The UI variants disagree about layout and information hierarchy, not just colour and copy, and the feedback you get is "the header from B with the sidebar from C".
+- The UI variants disagree about layout and information hierarchy. You can compare them on the same task and see which differences help or hinder it.
+- The recorded answer separates the chosen direction from the cases actually checked and any guidance the participant needed.
 - It is answered in one sitting. If you're still building it a day later, the question was too big; split it.
 - When it's over, main contains the decision and none of the prototype, and the implementation issue points at the branch that still holds it.
 
