@@ -33,7 +33,11 @@ In both sub-shapes the floating bottom bar is identical.
 
 ## Process
 
-### 1. State the question and pick N
+### 1. State the question and choose cases
+
+Define what would answer the question: a visual preference, or something the user needs to find, understand, or do.
+Choose realistic data and relevant states from the task and existing product rules, including cases whose omission could change the choice.
+Keep those cases the same across variants.
 
 Default to **3 variants**. More than 5 stops being radically different and starts being noise, so cap there.
 
@@ -91,13 +95,21 @@ Behaviour:
 
 Put the switcher in a single shared component so both sub-shapes can reuse it. Locate it wherever shared UI lives in the project.
 
-### 5. Hand it over
+### 5. Compare with the user
 
-Surface the URL (and the `?variant=` keys). The user will flip through whenever they get to it. The interesting feedback is usually **"I want the header from B with the sidebar from C"**, which is the actual design they want.
+Share the URL and the `?variant=` keys, then evaluate the prepared cases with the user.
+For comprehension or interaction questions, give a neutral task without naming the intended answer or control.
+Let the user show what they would do or explain what they understand before offering guidance.
+For questions of visual preference, compare the alternatives directly.
+Revise the relevant variants and revisit affected cases.
+Conclude when the question is answered with the user, or identify what still prevents a choice.
 
 ### 6. Capture the answer and clean up
 
-Once a variant has won, capture the answer (which variant and why), then capture the prototype the way the [SKILL](SKILL.md) describes. Fold the winner into the real code and move the rest onto the throwaway branch, not into main:
+Capture the chosen direction and why, the cases checked, who took part, relevant observations, any help needed, and what remains untested.
+Distinguish visual preference from observed task performance; conclusions apply to the participants and cases checked.
+Keep this with the verdict where the [SKILL](SKILL.md) records the answer and prototype.
+Fold the winner into the real code and move the rest onto the throwaway branch, not into main:
 
 - **Sub-shape A**: fold the winner into the existing page; drop the losing variants and the switcher from main.
 - **Sub-shape B**: promote the winning variant to a real route; drop the throwaway route and the switcher from main.
